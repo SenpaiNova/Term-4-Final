@@ -1,0 +1,289 @@
+:root {
+    --grey: #bccacc;
+    --cyan: #79A3B1;
+    --pink: #E97777;
+    --coral: coral;
+    --orange: #FF731D;
+    --white: whitesmoke;
+    --brown: #E14D2A;
+    --black: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+html {
+    font-size: 75%;
+    scroll-behavior: smooth;
+} 
+
+body {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+.logo img {
+    width: 4.8rem;
+    background-color: var(--title-color);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.navbar a {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5rem;
+    letter-spacing: .1rem;
+    text-align: center;
+}
+
+.navbar a:hover {
+    color: var(--coral);
+    transition: all 500ms;
+}
+
+header {
+    background-color: rgba(0,0,0,.5);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.icons {
+    justify-self: end;
+}
+
+.banner {
+    height: 100vh;
+    background-image: url(../images/meltedchoco.jpg);
+    background-position: center;
+    background-size: cover;
+
+    animation: imgc 5s infinite;
+}
+
+@keyframes imgc {
+    0% {
+        background-image: url(../images/meltedchoco.jpg);
+    }
+    50% {
+        background-image: url(../images/meltedwhite.jpg);
+    }
+    75% {
+        background-image: url(../images/melteddark.jpg);
+    }
+}
+
+.bannertxt {
+    font-size: 18px;
+    text-align: center;
+    color: var(--pink);
+    display: grid;
+    place-items: center;
+    padding-top: 60%;
+
+    animation: L-R 1s linear infinite alternate-reverse;
+}
+
+@keyframes L-R {
+    from {
+        transform: scale(0.9);
+        letter-spacing: 1px;
+    }
+    to {
+        transform: scale(1);
+        letter-spacing: 2px;
+    }
+}
+
+.bannertxt h2 {
+    color: var(--orange);
+}
+
+.showcase {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.showcase img {
+    width: 100%;
+    height: 100%;
+    padding: .2rem;
+}
+
+.topl {
+    border-radius: 1.5rem 0 0 0;
+}
+
+.topr {
+    border-radius: 0 1.5rem 0 0;
+}
+
+.botl {
+    border-radius: 0 0 0 1.5rem;
+}
+
+.botr {
+    border-radius: 0 0 1.5rem 0;
+}
+
+.sec-heading {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 24px;
+    color: var(--white);
+}
+
+.type {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border: .1rem solid white;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+}
+
+.type h3 {
+    text-align: left;
+    align-self: center;
+}
+
+.type p {
+    text-align: center;
+    padding-left: 2rem;
+}
+
+footer {
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+
+footer h5 {
+    text-align: center;
+    font-size: 16px;
+    grid-column: 1 / span 2;
+    align-self: flex-end;
+}
+
+.container {
+    font-size: 14px;
+    padding-right: 2rem;
+    justify-self: center;
+}
+
+.moreinfo {
+    font-size: 14px;
+    padding-right: 2rem;
+    justify-self: center;
+}
+
+.container .moreinfo, h3 {
+    border-bottom: 3px solid white;
+}
+
+.y {
+    color: crimson;
+}
+
+.recipies {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    justify-items: center;
+}
+
+.r-card {
+    padding: 1rem;
+    width: 30rem;
+    height: 30rem;
+    transform-style: preserve-3d;
+    transition: all 350ms;
+    margin: 1rem;
+}
+
+.r-card:hover {
+    transform: rotateY(-180deg);
+}
+
+.r-front {
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+}
+
+.r-front img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.r-front div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.r-back {
+    width: 30rem;
+    height: 30rem;
+    background-color: chocolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.r-desc {
+    width: 100%;
+    height: 100%;
+    display: grid;
+
+}
+
+.r-desc p {
+    font-size: 16px;
+    text-align: center;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+.desc {
+    padding: 1rem;
+    text-align: center;
+    font-size: 16px;
+}
+
+.desc span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: -1px 0 1px whitesmoke;
+}
+
+.V {
+    color: red;
+}
+
+.D {
+    color: yellow;
+}
